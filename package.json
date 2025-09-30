@@ -5,8 +5,8 @@
   "main": "src/index.js",
   "type": "module",
   "engines": {
-    "node": "^18.19.1",
-    "npm": "^10.2.4"
+    "node": "^22.20.0",
+    "npm": "^10.9.3"
   },
   "imports": {
     "#src/*": "./src/*"
