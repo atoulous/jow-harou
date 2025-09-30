@@ -9,17 +9,12 @@
     "allowJs": true,
     "resolveJsonModule": true,
     "target": "ESNext",
-    "module": "ESNext",
+    "module": "CommonJS",
     "moduleResolution": "Node",
     "outDir": "dist",
     "baseUrl": ".",
     "types": ["node", "jest"],
-    "lib": ["ESNext"],
-    "noEmit": false
-  },
-  "ts-node": {
-    "esm": true,
-    "experimentalSpecifierResolution": "node"
+    "lib": ["ESNext"]
   },
   "include": ["src"]
 }
