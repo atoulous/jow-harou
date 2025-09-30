@@ -13,9 +13,6 @@
     "moduleResolution": "Node",
     "outDir": "dist",
     "baseUrl": ".",
-    "paths": {
-      "#src/*": ["./src/*"]
-    },
     "types": ["node", "jest"],
     "lib": ["ESNext", "DOM"]
   },

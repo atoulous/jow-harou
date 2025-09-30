@@ -2,17 +2,14 @@
   "name": "jow-rahou",
   "version": "1.0.0",
   "description": "Jow RA Hou",
-  "main": "src/index.js",
+  "main": "index.js",
   "type": "module",
   "engines": {
     "node": "^22.20.0",
     "npm": "^10.9.3"
   },
-  "imports": {
-    "#src/*": "./src/*"
-  },
   "scripts": {
-    "start": "node --experimental-specifier-resolution=node --no-warnings ./dist/src/index.js",
+    "start": "node --experimental-specifier-resolution=node --no-warnings ./dist/index.js",
     "dev": "tsx watch ./src/index.ts",
     "build": "tsc -p tsconfig.json",
     "vercel-build": "npm run build",

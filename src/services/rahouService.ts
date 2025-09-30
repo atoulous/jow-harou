@@ -5,8 +5,8 @@
  * to provide a unified API for merchant operations.
  */
 
-import config from '#src/config';
-import { User } from '#src/types/user';
+import config from '../config';
+import { User } from '../types/user';
 
 export interface RahouCredentials {
   email: string;
