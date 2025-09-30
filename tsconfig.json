@@ -14,7 +14,8 @@
     "outDir": "dist",
     "baseUrl": ".",
     "types": ["node", "jest"],
-    "lib": ["ESNext", "DOM"]
+    "lib": ["ESNext"],
+    "noEmit": false
   },
   "ts-node": {
     "esm": true,
