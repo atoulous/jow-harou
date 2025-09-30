@@ -75,7 +75,6 @@ router.get('/', async (req, res) => {
       });
     }
 
-    // Use session to get user info
     const user = await houraService.getMe(session);
 
     if (user) {

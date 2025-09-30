@@ -66,29 +66,6 @@ class SessionService {
   }
 
   /**
-   * Get session by ID
-   * @param sessionId Session ID
-   * @returns Session or null if not found/expired
-   */
-  getSessionById(sessionId: string): StoredSession | null {
-    const session = this.sessions.get(sessionId);
-
-    if (!session) {
-      return null;
-    }
-
-    // Check if session is expired
-    if (session.expiresAt < new Date()) {
-      this.sessions.delete(sessionId);
-      return null;
-    }
-
-    // Update last accessed time
-    session.lastAccessedAt = new Date();
-    return session;
-  }
-
-  /**
    * Delete session
    * @param token Authentication token
    * @returns True if session was deleted
@@ -121,15 +98,6 @@ class SessionService {
     if (cleanedCount > 0) {
       console.log(`Cleaned up ${cleanedCount} expired sessions`);
     }
-  }
-
-  /**
-   * Get all active sessions (for debugging)
-   * @returns Array of active sessions
-   */
-  getActiveSessions(): StoredSession[] {
-    this.cleanupExpiredSessions();
-    return Array.from(this.sessions.values());
   }
 
   /**
