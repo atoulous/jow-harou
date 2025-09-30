@@ -10,7 +10,7 @@
     "resolveJsonModule": true,
     "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "Node",
     "outDir": "dist",
     "baseUrl": ".",
     "types": ["node", "jest"],
