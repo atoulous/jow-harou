@@ -1,3 +1,4 @@
+import { VercelRequest, VercelResponse } from '@vercel/node';
 import cors from 'cors';
 import express from 'express';
 import http from 'http';
@@ -30,9 +31,16 @@ const startApp = async () => {
       console.info(`[startApp] 🚀 Server ready on http://localhost:${port}`);
       console.info(`[startApp] 📚 API Documentation available at http://localhost:${port}/swagger`);
     });
+
+    return app;
   } catch (err) {
     console.error('[startApp] err', err);
   }
 };
 
-startApp();
+const appPromise = startApp();
+
+export default async (req: VercelRequest, res: VercelResponse) => {
+  const app = await appPromise;
+  return app(req, res);
+};
