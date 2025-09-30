@@ -1,4 +1,5 @@
 import dotenv from 'dotenv';
+
 dotenv.config();
 
 /**
@@ -9,6 +10,7 @@ dotenv.config();
 interface Config {
   port: number;
   nodeEnv: string;
+  apiBaseUrl: string;
   houra: {
     baseUrl?: string;
     loginUrl?: string;
@@ -29,6 +31,7 @@ const config: Config = {
   // Server Configuration
   port: parseInt(process.env.PORT || '3000', 10),
   nodeEnv: process.env.NODE_ENV || 'development',
+  apiBaseUrl: process.env.API_BASE_URL || 'http://localhost:3000',
 
   // Rahou Integration URLs
   houra: {

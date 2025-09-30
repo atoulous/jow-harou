@@ -2,6 +2,8 @@ import { Express } from 'express';
 import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 
+import config from './config';
+
 const swaggerOptions = {
   definition: {
     openapi: '3.0.0',
@@ -10,7 +12,12 @@ const swaggerOptions = {
       version: '1.0.0',
       description: 'API wrapper for e-commerce platform integration',
     },
-    servers: [{ url: 'http://localhost:3000' }],
+    servers: [
+      {
+        url: config.apiBaseUrl,
+        description: config.nodeEnv === 'production' ? 'Production server' : 'Development server',
+      },
+    ],
     components: {
       securitySchemes: {
         bearerAuth: {
